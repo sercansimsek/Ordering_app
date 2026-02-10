@@ -28,12 +28,13 @@ body {
 .card-icon {
 	width: 70px;
 	height: 89px;
-	object-fit: cover;
+	font-size: 50px;
 }
 
 .card-details {
 	display: flex;
 	flex-direction: column;
+	gap: 5px;
 }
 
 .card-add-btn {

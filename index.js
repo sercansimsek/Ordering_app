@@ -9,7 +9,7 @@ function render() {
 		const { name, ingredients, price, emoji } = item;
 		contentHtml += `
       <div class="main-card">
-        <p class="card-icon">${emoji}</p>
+        <span class="card-icon">${emoji}</span>
         <div class="card-details">
           <p class="details-name">${name}</p>
           <p class="details-ingredients">${ingredients.join(", ")}</p>
