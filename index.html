@@ -21,7 +21,7 @@
 
 		<main class="main">
 			<div class="main-container container">
-				<div class="main-card">
+				<section class="main-card">
 					<p class="card-icon"></p>
 					<div class="card-details">
 						<p class="details-name">Pizza</p>
@@ -29,10 +29,20 @@
 						<p class="details-price">$14</p>
 					</div>
 					<button class="card-add-btn">+</button>
-				</div>
-                <hr>
+				</section>
+				<hr />
 			</div>
+			<section class="main-order container">
+				<p class="order-title">Your Order</p>
+				<div class="order-list">
+					<p class="order-name">Pizza</p>
+					<hr />
+					<button class="order-btn">remove</button>
+					<p class="order-price">$14</p>
+				</div>
+			</section>
 		</main>
+
 		<script src="index.js" type="module"></script>
 	</body>
 </html>
