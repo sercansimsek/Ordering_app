@@ -4,7 +4,59 @@
 	box-sizing: border-box;
 }
 
+body {
+	font-family: "Smythe", system-ui;
+}
+
 .container {
 	width: 600px;
 	margin: 0 auto;
+}
+
+.main-container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 50px;
+}
+
+.main-card {
+	display: flex;
+	gap: 20px;
+}
+
+.card-icon {
+	width: 70px;
+}
+
+.card-details {
+	display: flex;
+	flex-direction: column;
+}
+
+.card-add-btn {
+	margin: 0 0 auto auto;
+	border: 1px solid #8b8b8b;
+	border-radius: 50%;
+	color: #3c3c3c;
+	background-color: #fff;
+	font-size: 32px;
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+}
+
+.details-name {
+	font-size: 28px;
+	color: #000;
+}
+
+.details-ingredients {
+	font-size: 16px;
+	color: #8b8b8b;
+}
+
+.details-price {
+	font-size: 20px;
+	color: #000;
 }
