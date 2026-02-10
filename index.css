@@ -27,6 +27,8 @@ body {
 
 .card-icon {
 	width: 70px;
+	height: 89px;
+	object-fit: cover;
 }
 
 .card-details {
