@@ -51,6 +51,13 @@ body {
 	height: 50px;
 }
 
+.card-add-btn:hover,
+.card-add-btn:focus {
+	background-color: #16db99;
+	color: #fff;
+	border: none;
+}
+
 .details-name {
 	font-size: 28px;
 	color: #000;
@@ -72,7 +79,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	padding: 50px 35px;
+	padding: 0 35px 50px 35px;
 }
 
 .order-title {
@@ -88,7 +95,8 @@ body {
 	gap: 10px;
 }
 
-.order-name, .total-title {
+.order-name,
+.total-title {
 	font-size: 28px;
 	color: #000;
 }
@@ -101,7 +109,8 @@ body {
 	cursor: pointer;
 }
 
-.order-price, .total-price {
+.order-price,
+.total-price {
 	margin: 0 0 auto auto;
 	font-size: 20px;
 }
@@ -119,11 +128,12 @@ body {
 }
 
 .complete-btn {
-	background-color: #16DB99;
+	background-color: #16db99;
 	color: #fff;
 	border: none;
 	border-radius: 5px;
 	padding: 15px;
 	font-weight: 900;
+	margin-top: 30px;
+	font-family: "Verdana", sans-serif;
 }
-
