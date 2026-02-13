@@ -7,10 +7,19 @@ const addBtn = document.querySelector(".card-add-btn");
 window.addEventListener("click", function (e) {
 	if (e.target.dataset.id) {
 		handleAddItem(e.target.dataset.id);
+		// mainOrder.style.display = "flex";
 	}
 });
 
-function handleAddItem(itemId) {}
+function handleAddItem(itemId) {
+	let newArr = menuArray.filter((item) => item.id === parseInt(itemId));
+
+	let sum = newArr.reduce((total, currentPrice) => {
+		total + currentPrice.price;
+	}, 0);
+
+	console.log(newArr, sum);
+}
 
 function getListOfFood() {
 	let listHtml = "";
@@ -36,26 +45,4 @@ function getListOfFood() {
 	mainContainer.innerHTML = listHtml;
 }
 
-function getOrderTotal() {
-	let orderTotalHtml = "";
-
-	orderTotalHtml = `
-		<p class="order-title">Your Order</p>
-				<div class="order-list">
-					<p class="order-name">Pizza</p>
-					<button class="order-btn">remove</button>
-					<p class="order-price">$14</p>
-				</div>
-				<hr class="order-divider"/>
-				<div class="order-total">
-					<p class="total-title">Total price:</p>
-					<p class="total-price">$14</p>
-				</div>
-				<button class="complete-btn">Complete Order</button>
-	`;
-
-	mainOrder.innerHTML = orderTotalHtml;
-}
-
 getListOfFood();
-getOrderTotal();
