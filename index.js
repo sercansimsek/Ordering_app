@@ -6,9 +6,10 @@ const mainOrder = document.querySelector(".main-order");
 function render() {
 	let contentHtml = "";
 
-	menuArray.map((item) => {
-		const { name, ingredients, price, emoji } = item;
-		contentHtml += `
+	menuArray
+		.map((item) => {
+			const { name, ingredients, price, emoji } = item;
+			contentHtml += `
       <div class="main-card">
         <span class="card-icon">${emoji}</span>
         <div class="card-details">
@@ -20,7 +21,8 @@ function render() {
       </div>
       <hr>
   `;
-	});
+		})
+		.join("");
 
 	mainContainer.innerHTML = contentHtml;
 }
