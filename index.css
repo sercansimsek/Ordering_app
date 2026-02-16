@@ -151,6 +151,9 @@ body {
   width: 524px;
   padding: 20px;
   border: 1px solid black;
+  background-color: #fff;
+
+  filter: drop-shadow(15px 15px 10px #757575);
 }
 
 .form {
