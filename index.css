@@ -76,7 +76,7 @@ body {
 /* Main order */
 
 .main-order {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	gap: 10px;
 	padding: 0 35px 50px 35px;
@@ -136,4 +136,5 @@ body {
 	font-weight: 900;
 	margin-top: 30px;
 	font-family: "Verdana", sans-serif;
+	cursor: pointer;
 }

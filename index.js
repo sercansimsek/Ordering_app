@@ -3,22 +3,57 @@ import menuArray from "/data.js";
 const mainContainer = document.querySelector(".main-container");
 const mainOrder = document.querySelector(".main-order");
 const addBtn = document.querySelector(".card-add-btn");
+const orderList = document.querySelector(".order-list");
+
+let orderItems = [];
 
 window.addEventListener("click", function (e) {
 	if (e.target.dataset.id) {
 		handleAddItem(e.target.dataset.id);
-		// mainOrder.style.display = "flex";
+		mainOrder.style.display = "flex";
 	}
 });
 
 function handleAddItem(itemId) {
-	let newArr = menuArray.filter((item) => item.id === parseInt(itemId));
+	const item = menuArray.find((item) => item.id === parseInt(itemId));
+	if (item) {
+		orderItems.push(item);
+	}
+	getOrderList();
+}
 
-	let sum = newArr.reduce((total, currentPrice) => {
-		total + currentPrice.price;
+function getOrderList() {
+	let orderListItems = "";
+
+	let sum = orderItems.reduce((total, currentPrice) => {
+		return total + currentPrice.price;
 	}, 0);
 
-	console.log(newArr, sum);
+	orderItems.forEach((item) => {
+		const { name, price, id } = item;
+
+		orderListItems += `
+			<div class="order-list">
+				<p class="order-name">${name}</p>
+				<button class="order-btn">remove</button>
+				<p class="order-price">$${price}</p>
+			</div>
+		
+		`;
+	});
+
+	const orderList = `
+		<p class="order-title">Your Order</p>
+		${orderListItems}
+		<hr class="order-divider"/>
+		<div class="order-total">
+			<p class="total-title">Total price:</p>
+			<p class="total-price">$${sum}</p>
+		</div>
+		<button class="complete-btn">Complete Order</button>
+	`;
+
+	mainOrder.innerHTML = orderList;
 }
 
 function getListOfFood() {
