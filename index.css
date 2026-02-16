@@ -135,6 +135,7 @@ body {
   border-radius: 5px;
   padding: 15px;
   font-weight: 900;
+  font-size: 20px;
 
   font-family: "Verdana", sans-serif;
   cursor: pointer;
@@ -148,6 +149,8 @@ body {
 
 .popup-modal {
   width: 524px;
+  padding: 20px;
+  border: 1px solid black;
 }
 
 .form {
@@ -157,10 +160,18 @@ body {
   justify-content: center;
 }
 
+.form-title {
+  margin: 15px 0;
+}
+
 .form-inputs {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+}
+
+.form-inputs input:last-child {
+  margin-bottom: 20px;
 }
 
 .form-inputs input {
