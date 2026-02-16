@@ -22,14 +22,21 @@ window.addEventListener("click", function (e) {
 function handleRemoveItem(removeId) {
 	orderItems = orderItems.filter((item) => item.id !== parseInt(removeId));
 
+	if (!orderItems.length) {
+		mainOrder.style.display = "none";
+	}
+
 	getOrderList();
 }
 
 function handleAddItem(itemId) {
-	const item = menuArray.find((item) => item.id === parseInt(itemId));
+	let item = menuArray.find((item) => item.id === parseInt(itemId));
 	if (item) {
+		item = { ...item, id: parseInt((Math.random() * 100 + 1).toFixed(3)) };
 		orderItems.push(item);
 	}
+	console.log(orderItems);
+
 	getOrderList();
 }
 
