@@ -4,6 +4,7 @@ const mainContainer = document.querySelector(".main-container");
 const mainOrder = document.querySelector(".main-order");
 const addBtn = document.querySelector(".card-add-btn");
 const orderList = document.querySelector(".order-list");
+const orderBtn = document.querySelector(".order-btn");
 
 let orderItems = [];
 
@@ -12,7 +13,17 @@ window.addEventListener("click", function (e) {
 		handleAddItem(e.target.dataset.id);
 		mainOrder.style.display = "flex";
 	}
+
+	if (e.target.dataset.remove) {
+		handleRemoveItem(e.target.dataset.remove);
+	}
 });
+
+function handleRemoveItem(removeId) {
+	orderItems = orderItems.filter((item) => item.id !== parseInt(removeId));
+
+	getOrderList();
+}
 
 function handleAddItem(itemId) {
 	const item = menuArray.find((item) => item.id === parseInt(itemId));
@@ -35,7 +46,7 @@ function getOrderList() {
 		orderListItems += `
 			<div class="order-list">
 				<p class="order-name">${name}</p>
-				<button class="order-btn">remove</button>
+				<button class="order-btn" data-remove="${id}">remove</button>
 				<p class="order-price">$${price}</p>
 			</div>
 		
