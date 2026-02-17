@@ -148,6 +148,12 @@ body {
 /* Popup Modal */
 
 .popup-modal {
+  display: flex;
+  position: fixed;
+  margin: auto;
+  top: 85px;
+  left: 0;
+  right: 0;
   width: 524px;
   padding: 20px;
   border: 1px solid black;
