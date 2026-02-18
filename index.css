@@ -201,3 +201,44 @@ body {
 .form-title {
 	text-align: center;
 }
+
+/* Success Message */
+
+/* .confirmed-message {
+  display: none;
+	text-align: center;
+	width: 600px;
+	margin: 0 auto;
+	background-color: #fff;
+  z-index: 20;
+}
+
+.confirmed-title {
+	background-color: #ecfdf5;
+	color: #065f46;
+	margin: 0 auto;
+	padding: 30px 0;
+	width: 504px;
+	font-size: 24px;
+}
+ */
+
+.confirmed-message {
+	display: none;
+	text-align: center;
+	width: 600px;
+	margin: 0 auto;
+	background-color: #fff;
+	justify-content: center;
+	z-index: 2000;
+	position: relative;
+}
+
+.confirmed-message h2 {
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 5px;
+	color: #16db99;
+	width: 504px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

@@ -5,6 +5,10 @@ const mainOrder = document.querySelector(".main-order");
 const addBtn = document.querySelector(".card-add-btn");
 const orderList = document.querySelector(".order-list");
 const orderBtn = document.querySelector(".order-btn");
+const completeBtn = document.querySelector(".complete-btn");
+const popupModal = document.querySelector(".popup-modal");
+const payBtn = document.querySelector(".pay-btn");
+const confirmedMessage = document.querySelector(".confirmed-message");
 
 let orderItems = [];
 
@@ -16,6 +20,14 @@ window.addEventListener("click", function (e) {
 
 	if (e.target.dataset.remove) {
 		handleRemoveItem(e.target.dataset.remove);
+	}
+
+	if (e.target.dataset.complete) {
+		popupModal.style.display = "flex";
+	}
+
+	if (e.target.dataset.pay) {
+		confirmedMessage.style.display = "flex";
 	}
 });
 
@@ -68,7 +80,7 @@ function getOrderList() {
 			<p class="total-title">Total price:</p>
 			<p class="total-price">$${sum}</p>
 		</div>
-		<button class="complete-btn">Complete Order</button>
+		<button class="complete-btn" data-complete="completed">Complete Order</button>
 	`;
 
 	mainOrder.innerHTML = orderList;

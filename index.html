@@ -1,39 +1,39 @@
 <html>
-  <head>
-    <!-- Font family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <img
-          src="/images/header.png"
-          alt="burger image stands next to the restaurant's logo"
-        />
-      </div>
-    </header>
+	<head>
+		<!-- Font family -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<img
+					src="/images/header.png"
+					alt="burger image stands next to the restaurant's logo"
+				/>
+			</div>
+		</header>
 
-    <main class="main">
-      <div class="main-container container">
-        <section class="main-card">
-          <p class="card-icon"></p>
-          <div class="card-details">
-            <p class="details-name">Pizza</p>
-            <p class="details-ingredients">Mushrooms, mozarella, pepperoni</p>
-            <p class="details-price">$14</p>
-          </div>
-          <button class="card-add-btn">+</button>
-        </section>
-        <hr />
-      </div>
-      <section class="main-order container">
-        <!-- <p class="order-title">Your Order</p>
+		<main class="main">
+			<div class="main-container container">
+				<section class="main-card">
+					<p class="card-icon"></p>
+					<div class="card-details">
+						<p class="details-name">Pizza</p>
+						<p class="details-ingredients">Mushrooms, mozarella, pepperoni</p>
+						<p class="details-price">$14</p>
+					</div>
+					<button class="card-add-btn">+</button>
+				</section>
+				<hr />
+			</div>
+			<section class="main-order container">
+				<!-- <p class="order-title">Your Order</p>
 				<div class="order-list">
 					<p class="order-name">Pizza</p>
 					<button class="order-btn">remove</button>
@@ -45,21 +45,40 @@
 					<p class="total-price">$14</p>
 				</div>
 				<button class="complete-btn">Complete Order</button> -->
-      </section>
-    </main>
+			</section>
+		</main>
 
-    <div class="popup-modal">
-      <form action="" class="form">
-        <h1 class="form-title">Enter form details</h1>
-        <div class="form-inputs">
-          <input type="text" placeholder="Enter your name" />
-          <input type="text" placeholder="Enter card number" />
-          <input type="text" placeholder="Enter CVV" />
-        </div>
-        <button class="pay-btn">Pay</button>
-      </form>
-    </div>
+		<div class="popup-modal">
+			<form action="" class="form">
+				<h1 class="form-title">Enter form details</h1>
+				<div class="form-inputs">
+					<input type="text" placeholder="Enter your name" required />
+					<input
+						type="text"
+						placeholder="Enter card number"
+						maxlength="16"
+						minlength="13"
+						pattern="[0-9]*"
+						inputmode="numeric"
+						required
+					/>
+					<input
+						type="text"
+						placeholder="Enter CVV"
+						maxlength="3"
+						required
+						pattern="[0-9]*"
+						inputmode="numeric"
+					/>
+				</div>
+				<button class="pay-btn" data-pay="pay">Pay</button>
+			</form>
+		</div>
 
-    <script src="index.js" type="module"></script>
-  </body>
+		<div class="confirmed-message">
+			<h2>Thanks James! Your order is on its way!</h2>
+		</div>
+
+		<script src="index.js" type="module"></script>
+	</body>
 </html>
