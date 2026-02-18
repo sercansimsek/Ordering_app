@@ -12,6 +12,7 @@ window.addEventListener("click", function (e) {
 	if (e.target.dataset.id) {
 		handleAddItem(e.target.dataset.id);
 		mainOrder.style.display = "flex";
+		confirmedMessage.style.display = "none";
 	}
 
 	if (e.target.dataset.remove) {
@@ -31,7 +32,10 @@ window.addEventListener("click", function (e) {
 		popupModal.style.display = "none";
 		mainOrder.style.display = "none";
 
+		orderItems = [];
+
 		confirmedMessage.innerHTML = payHtml;
+		confirmedMessage.style.display = "flex";
 	}
 });
 
