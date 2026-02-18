@@ -2,13 +2,9 @@ import menuArray from "/data.js";
 
 const mainContainer = document.querySelector(".main-container");
 const mainOrder = document.querySelector(".main-order");
-const addBtn = document.querySelector(".card-add-btn");
-const orderList = document.querySelector(".order-list");
-const orderBtn = document.querySelector(".order-btn");
-const completeBtn = document.querySelector(".complete-btn");
 const popupModal = document.querySelector(".popup-modal");
-const payBtn = document.querySelector(".pay-btn");
 const confirmedMessage = document.querySelector(".confirmed-message");
+const nameInput = document.querySelector(".name-input");
 
 let orderItems = [];
 
@@ -27,7 +23,15 @@ window.addEventListener("click", function (e) {
 	}
 
 	if (e.target.dataset.pay) {
-		confirmedMessage.style.display = "flex";
+		e.preventDefault();
+		let payHtml = "";
+		let name = nameInput.value;
+
+		payHtml = `<h2>Thanks ${name}! Your order is on its way!</h2>`;
+		popupModal.style.display = "none";
+		mainOrder.style.display = "none";
+
+		confirmedMessage.innerHTML = payHtml;
 	}
 });
 

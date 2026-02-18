@@ -224,18 +224,16 @@ body {
  */
 
 .confirmed-message {
-	display: none;
+	display: flex;
 	text-align: center;
 	width: 600px;
 	margin: 0 auto;
 	background-color: #fff;
 	justify-content: center;
-	z-index: 2000;
-	position: relative;
 }
 
 .confirmed-message h2 {
-	background-color: #fff;
+	background-color: #ECFDF5;
 	padding: 30px;
 	border-radius: 5px;
 	color: #16db99;
